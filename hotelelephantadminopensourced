@@ -1,0 +1,208 @@
+print("\nHotel Elephant Admin Commands By Wexn\n\n\n :elevator # (Elevator Floor Changer  0-5)\n\n :getroom # (If the room empty u can get with command MAX 8 [u will not get key and u can get multiple rooms])\n\n :door # (door opener closer MAX 8 [It can open balcony door sometimes])\n\n :spawnjetski\n:spawnboat\n:spawntransporter (:spawnjetski spawns Jet Ski :spawnboat spawns Dinghy :spawntransporter spawns Transporter Boat)\n\n :infmoney (Gives u 1.000 Billion Cash)\n\n :team (Neutral team thing yes its FE)\n\n\n :cmds (shows commands)\n\n\n\n Credits: Wexn & Hell")
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+
+if (string.lower(msg) == ":infmoney") then
+local args = {
+    [1] = false,
+    [2] = 999999999999,
+    [3] = "Cash",
+    [4] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("MoneyRequest"):FireServer(unpack(args))
+end
+
+if (string.lower(msg) == ":cmds") then
+ print("\nHotel Elephant Admin Commands By Wexn\n\n\n :elevator # (Elevator Floor Changer MAX 6)\n\n :getroom # (If the room empty u can get with command MAX 8 [u will not get key and u can get multiple rooms])\n\n :door # (door opener closer MAX 8 [It can open balcony door sometimes])\n\n :spawnjetski\n:spawnboat\n:spawntransporter (:spawnjetski spawns Jet Ski :spawnboat spawns Dinghy :spawntransporter spawns Transporter Boat)\n\n :infmoney (Gives u 1.000 Billion Cash)\n\n :team (Neutral team thing yes its FE)\n\n\n :cmds (shows commands)")
+end
+
+if (string.lower(msg) == ":team") then
+        local args = {
+                [1] = "blue"
+            }
+            
+            game:GetService("ReplicatedStorage"):WaitForChild("ChangeTeam"):InvokeServer(unpack(args))
+            
+end
+
+if (string.lower(msg) == ":door 1") then
+local args = {
+    [1] = workspace:WaitForChild("RoomDoors"):WaitForChild("Room 1")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("DoorOpener"):FireServer(unpack(args))
+end
+
+if (string.lower(msg) == ":door 2") then
+local args = {
+    [1] = workspace:WaitForChild("RoomDoors"):WaitForChild("Room 2")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("DoorOpener"):FireServer(unpack(args))
+end
+
+if (string.lower(msg) == ":door 3") then
+local args = {
+    [1] = workspace:WaitForChild("RoomDoors"):WaitForChild("Room 3")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("DoorOpener"):FireServer(unpack(args))
+end
+
+if (string.lower(msg) == ":door 4") then
+local args = {
+    [1] = workspace:WaitForChild("RoomDoors"):WaitForChild("Room 4")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("DoorOpener"):FireServer(unpack(args))
+end
+
+if (string.lower(msg) == ":door 5") then
+local args = {
+    [1] = workspace:WaitForChild("RoomDoors"):WaitForChild("Room 5")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("DoorOpener"):FireServer(unpack(args))
+end
+
+if (string.lower(msg) == ":door 6") then
+local args = {
+    [1] = workspace:WaitForChild("RoomDoors"):WaitForChild("Room 6")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("DoorOpener"):FireServer(unpack(args))
+end
+
+if (string.lower(msg) == ":door 7") then
+local args = {
+    [1] = workspace:WaitForChild("RoomDoors"):WaitForChild("Room 7")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("DoorOpener"):FireServer(unpack(args))
+end
+
+if (string.lower(msg) == ":door 8") then
+local args = {
+    [1] = workspace:WaitForChild("RoomDoors"):WaitForChild("Room 8")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("DoorOpener"):FireServer(unpack(args))
+end
+
+    if string.find(msg:lower(), ":elevator") then
+        local Int = msg:match("(%d+)")
+
+        if Int then
+            game:GetService("ReplicatedStorage").ElevatorHandler:FireServer(Int)
+        end
+    end
+
+
+if (string.lower(msg) == ":spawnjetski") then
+local args = {
+    [1] = "Jetski"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("BoatSpawner"):InvokeServer(unpack(args))
+
+end
+
+if (string.lower(msg) == ":spawntransporter") then
+local args = {
+    [1] = "Transport Boat"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("BoatSpawner"):InvokeServer(unpack(args))
+
+end
+
+if (string.lower(msg) == ":spawnboat") then
+local args = {
+    [1] = "Dinghy"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("BoatSpawner"):InvokeServer(unpack(args))
+
+end
+
+if (string.lower(msg) == ":getroom 1") then
+local args = {
+    [1] = false,
+    [2] = "Room 1"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RoomGiver"):FireServer(unpack(args))
+
+end
+
+if (string.lower(msg) == ":getroom 2") then
+local args = {
+    [1] = false,
+    [2] = "Room 2"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RoomGiver"):FireServer(unpack(args))
+
+end
+
+if (string.lower(msg) == ":getroom 3") then
+local args = {
+    [1] = false,
+    [2] = "Room 3"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RoomGiver"):FireServer(unpack(args))
+
+end
+
+if (string.lower(msg) == ":getroom 4") then
+local args = {
+    [1] = false,
+    [2] = "Room 4"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RoomGiver"):FireServer(unpack(args))
+
+end
+
+if (string.lower(msg) == ":getroom 5") then
+local args = {
+    [1] = false,
+    [2] = "Room 5"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RoomGiver"):FireServer(unpack(args))
+
+end
+
+if (string.lower(msg) == ":getroom 6") then
+local args = {
+    [1] = false,
+    [2] = "Room 6"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RoomGiver"):FireServer(unpack(args))
+
+end
+
+if (string.lower(msg) == ":getroom 7") then
+local args = {
+    [1] = false,
+    [2] = "Room 7"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RoomGiver"):FireServer(unpack(args))
+
+end
+
+if (string.lower(msg) == ":getroom 8") then
+local args = {
+    [1] = false,
+    [2] = "Room 8"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RoomGiver"):FireServer(unpack(args))
+
+end
+end)
