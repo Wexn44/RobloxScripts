@@ -164,37 +164,7 @@ local switch = false
 local key = "k"
 local aimatpart = nil
 mouse.KeyDown:Connect(function(a)
-if a == "t" then
-print("worked1")
-f.addesp()
-elseif a == "u" then
-if raycast == true then
-raycast = false
-else
-raycast = true
-end
-elseif a == "l" then
-if autoesp == false then
-autoesp = true
-else
-autoesp = false
-end
-end
-if a == "j" then
-if mouse.Target then
-mouse.Target:Destroy()
-end
-end
-if a == key then
-if switch == false then
-switch = true
-else
-switch = false
-if aimatpart ~= nil then
-aimatpart = nil
-end
-end
-elseif a == teambasedswitch then
+if a == teambasedswitch then
 if TeamBased == true then
 TeamBased = false
 teambasedstatus.Text = tostring(TeamBased)
