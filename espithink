@@ -1,0 +1,95 @@
+print(Enum.KeyCode[_G.Key].." key")
+
+
+
+
+
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local espenabled = true
+local function esp(plr)
+        if plr ~= Players.LocalPlayer then
+            local chead = plr.Character:FindFirstChild("Head")
+
+            if chead then
+                local BillboardGui = Instance.new("BillboardGui")
+                local TextLabel = Instance.new("TextLabel")
+                local high = Instance.new("Highlight")
+
+                --Properties:
+                high.Parent = chead.Parent
+
+                BillboardGui.Parent = chead
+                BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                BillboardGui.Active = true
+                BillboardGui.AlwaysOnTop = true
+                BillboardGui.LightInfluence = 1.000
+                BillboardGui.Size = UDim2.new(0, 400, 0, 50)
+                BillboardGui.StudsOffset = Vector3.new(0, 2, 0)
+
+                TextLabel.Parent = BillboardGui
+                TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                TextLabel.BackgroundTransparency = 1.000
+                TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+                TextLabel.BorderSizePixel = 0
+                TextLabel.Size = UDim2.new(1, 0, 1, 0)
+                TextLabel.Font = Enum.Font.GothamBold
+                TextLabel.Text = plr.Name
+                TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+                TextLabel.TextSize = 14.000
+                TextLabel.TextStrokeTransparency = 0.000
+                TextLabel.TextWrapped = true
+            end
+        end
+end
+local function espac()
+    if espenabled == true then
+        for i, plr in pairs(game.Players:GetChildren()) do
+            local hig = plr.Character:FindFirstChild("Highlight")
+    
+            if hig then
+                hig.Enabled = false
+                hig.Parent.Head.BillboardGui.Enabled = false
+                espenabled = false
+            end
+        end
+    else
+        for i, plr in pairs(game.Players:GetChildren()) do
+            local hig = plr.Character:FindFirstChild("Highlight")
+    
+            if hig then
+                hig.Enabled = true
+                hig.Parent.Head.BillboardGui.Enabled = true
+                espenabled = true
+            end
+        end
+    end
+end
+local function highUp(plr)
+    if plr.Team then
+        plr.Character.Highlight.FillColor = plr.TeamColor.Color
+    else
+        plr.Character.Highlight.FillColor = Color3.fromRGB(255, 0, 0) 
+    end
+end
+RunService.RenderStepped:Connect(function()
+    if espenabled == true then
+        for i, plr in pairs(game.Players:GetChildren()) do
+            local hig = plr.Character:FindFirstChild("Highlight")
+    
+            if not hig then
+                esp(plr)
+            else
+                highUp(plr)
+            end
+        end
+    end 
+end)
+
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if gameProcessed then return end 
+    if input.KeyCode == Enum.KeyCode[_G.Key] then
+        espac()
+    end
+end)
