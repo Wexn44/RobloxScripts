@@ -87,7 +87,7 @@ end)
 
 UserInputService.InputBegan:Connect(function(input, gameProcessed)
     if gameProcessed then return end 
-    if input.KeyCode == Enum.KeyCode[_G.Key] then
+    if input.KeyCode == Enum.KeyCode[_G.openkey] then
         espac()
     end
 end)
