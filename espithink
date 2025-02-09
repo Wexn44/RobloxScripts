@@ -1,4 +1,4 @@
-print(Enum.KeyCode[_G.Key].." key")
+print(_G.Key .." key")
 
 
 
