@@ -1,5 +1,5 @@
 local plrs = game:GetService("Players")
-local TeamBased = false ; local teambasedswitch = "o"
+local TeamBased = _G.teambasedwexnaim ; local teambasedswitch = "o"
 local presskeytoaim = true; local aimkey = _G.aimkeybro
 local raycast = false
  
