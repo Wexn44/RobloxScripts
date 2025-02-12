@@ -1,6 +1,6 @@
 local plrs = game:GetService("Players")
-local TeamBased = true ; local teambasedswitch = "o"
-local presskeytoaim = true; local aimkey = "e"
+local TeamBased = false ; local teambasedswitch = "o"
+local presskeytoaim = true; local aimkey = _G.aimkeybro
 local raycast = false
  
 local espupdatetime = 5; autoesp = false
@@ -39,9 +39,10 @@ Main.Parent = Gui
 Main.BackgroundColor3 = Color3.new(0.176471, 0.176471, 0.176471)
 Main.BackgroundTransparency = 0.65
 Main.Position = UDim2.new(0.005, 0,0.018, 0)
-Main.Size = UDim2.new(0.1, 0, 0.2, 0)
+Main.Size = UDim2.new(0.1, 0, 0.1, 0)
 Main.Active = true
 Main.Draggable = true
+
  
 st1.Name = "st1"
 st1.Parent = Main
@@ -50,7 +51,7 @@ st1.BackgroundTransparency = 1
 st1.Position = UDim2.new(0.271787882, 0, 0, 0)
 st1.Size = UDim2.new(0.728211343, 0, 0.161862016, 0)
 st1.Font = Enum.Font.ArialBold
-st1.Text = "Press "..aimkey.." to lock on a person inside ur view"
+st1.Text = ""..aimkey.."  aim"
 st1.TextColor3 = Color3.new(0.0431373, 1, 0.0745098)
 st1.TextScaled = true
 st1.TextSize = 14
@@ -64,7 +65,7 @@ st1_3.BackgroundTransparency = 1
 st1_3.Position = UDim2.new(0, 0, 0.18558608, 0)
 st1_3.Size = UDim2.new(0.999999881, 0, 0.161862016, 0)
 st1_3.Font = Enum.Font.ArialBold
-st1_3.Text = "Press O to change team based mode"
+st1_3.Text = ""
 st1_3.TextColor3 = Color3.new(0.0431373, 1, 0.0745098)
 st1_3.TextScaled = true
 st1_3.TextSize = 14
@@ -176,20 +177,20 @@ elseif a == aimkey then
 if not aimatpart then
 local maxangle = math.rad(20)
 for i, plr in pairs(plrs:GetChildren()) do
-if plr.Name ~= lplr.Name and plr.Character and plr.Character.Head and plr.Character.Humanoid and plr.Character.Humanoid.Health > 1 then
+if plr.Name ~= lplr.Name and plr.Character and plr.Character[_G.aimpartwexn] and plr.Character.Humanoid and plr.Character.Humanoid.Health > 1 then
 if TeamBased == true then
 if plr.Team.Name ~= lplr.Team.Name then
-local an = checkfov(plr.Character.Head)
+local an = checkfov(plr.Character[_G.aimpartwexn])
 if an < maxangle then
 maxangle = an
-aimatpart = plr.Character.Head
+aimatpart = plr.Character[_G.aimpartwexn]
 end
 end
 else
-local an = checkfov(plr.Character.Head)
+local an = checkfov(plr.Character[_G.aimpartwexn])
 if an < maxangle then
 maxangle = an
-aimatpart = plr.Character.Head
+aimatpart = plr.Character[_G.aimpartwexn]
 end
 print(plr)
 end
@@ -275,44 +276,6 @@ aimatpart = nil
 end
 end
  
- 
---  if switch == true then
---  local maxangle = 99999
--- 
---  --print("Loop")
---  if true and raycast == false then
---  for i, plr in pairs(plrs:GetChildren()) do
---  if plr.Name ~= lplr.Name and plr.Character and plr.Character.Head and plr.Character.Humanoid and plr.Character.Humanoid.Health > 1 then
---  if TeamBased then
---  if plr.Team.Name ~= lplr.Team.Name or plr.Team.TeamColor ~= lplr.Team.TeamColor then
---  local an = checkfov(plr.Character.Head)
---  if an < maxangle then
---  maxangle = an
---  aimatpart = plr.Character.Head
---  if an < lockangle then
---  break
---  end
---  end
---  end
---  else
---  local an = checkfov(plr.Character.Head)
---  if an < maxangle then
---  maxangle = an
---  aimatpart = plr.Character.Head
---  if an < lockangle then
---  break
---  end
---  end
---  end
--- 
--- 
--- 
--- 
---  end
---  end
---  elseif raycast == true then
--- 
---  end
  
 if raycast == true and switch == false and not aimatpart then
 getaimbotplrs()
