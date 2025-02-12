@@ -26,3 +26,12 @@ if not _G.wexnloaded then
     _G.wexnloaded = true
 end
 ```
+
+# esp
+
+## shitty esp
+
+```lua
+_G.openkey = "Q"
+loadstring(game:HttpGet('https://raw.githubusercontent.com/wexnrblx/RobloxScripts/refs/heads/main/espithink'))()
+```
