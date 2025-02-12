@@ -12,8 +12,17 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/Wexn44/RobloxScripts/
 
 # Universal Aimbot
 
-## idk its not my code just edited the gui / and its not working all time 
+## idk its not my code just edited the gui 
 
-```md
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Wexn44/RobloxScripts/refs/heads/main/aimbot'))()
+```lua
+_G.aimkeybro = "t" -- kucuk harf olmali
+_G.aimpartwexn = "Torso"
+_G.wexnloaded = _G.wexnloaded or false
+-- Head
+-- Torso
+-- HumanoidRootPart
+if not _G.wexnloaded then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/Wexn44/RobloxScripts/refs/heads/main/aimbot'))()
+    _G.wexnloaded = true
+end
 ```
