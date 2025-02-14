@@ -6,7 +6,7 @@ my roblox scripts
 ## Press F9 for cmds!
 
 ```lua
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Wexn44/RobloxScripts/main/hotelelephantadmin'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/wexnrblx/RobloxScripts/main/hotelelephantadmin'))()
 ```
 
 
@@ -22,7 +22,7 @@ _G.wexnloaded = _G.wexnloaded or false
 -- Torso
 -- HumanoidRootPart
 if not _G.wexnloaded then
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/Wexn44/RobloxScripts/refs/heads/main/aimbot'))()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/wexnrblx/RobloxScripts/refs/heads/main/aimbot'))()
     _G.wexnloaded = true
 end
 ```
