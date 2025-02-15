@@ -10,7 +10,7 @@ _G.aimkeybro = "t" -- needs to be small idk
 _G.aimpartwexn = "Torso"
 _G.openkey = "Q"
 
-loadstring(game:HttpGet('[https://raw.githubusercontent.com/wexnrblx/RobloxScripts/main/hotelelephantadmin](https://raw.githubusercontent.com/wexnrblx/RobloxScripts/refs/heads/main/thetroubles)'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/wexnrblx/RobloxScripts/refs/heads/main/thetroubles'))()
 ```
 
 # Hotel Elephant Admin
