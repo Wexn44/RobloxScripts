@@ -1,12 +1,24 @@
 # Roblox Script
 my roblox scripts
 
+# The Troubles V4
+
+## 😃
+
+```lua
+loadstring(game:HttpGet('https://raw.githubusercontent.com/wexnrblx/RobloxScripts/main/hotelelephantadmin'))()
+```
+
 # Hotel Elephant Admin
 
 ## Press F9 for cmds!
 
 ```lua
-loadstring(game:HttpGet('https://raw.githubusercontent.com/wexnrblx/RobloxScripts/main/hotelelephantadmin'))()
+_G.aimkeybro = "t" -- needs to be small idk
+_G.aimpartwexn = "Torso"
+_G.openkey = "Q"
+
+loadstring(game:HttpGet('[https://raw.githubusercontent.com/wexnrblx/RobloxScripts/main/hotelelephantadmin](https://raw.githubusercontent.com/wexnrblx/RobloxScripts/refs/heads/main/thetroubles)'))()
 ```
 
 
